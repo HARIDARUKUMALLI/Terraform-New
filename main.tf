@@ -15,9 +15,7 @@ resource "aws_security_group" "my-sg" {
   }
 }
 
-output "security_group_id" {
-value  = "${aws_security_group.my-sg.id}"
-}
+
 
 resource "aws_instance" "example" {
   ami  = "ami-04b9e92b5572fa0d1"
@@ -36,16 +34,4 @@ tags  = {
 lifecycle {
   create_before_destroy = "false"
 }
-}
-
-variable  "instance_count"  {
-  default = "2"
-}
-variable "instance_tags"  {
-  type  = "list"
-  default = [ "Test1", "Test2"]
-}
-
-output "instance_ips" {
-  value = ["${aws_instance.example.*.public_ip}"]
 }
