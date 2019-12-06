@@ -18,7 +18,7 @@ resource "aws_security_group" "my-sg" {
 
 
 resource "aws_instance" "example" {
-  ami  = "ami-04b9e92b5572fa0d1"
+  ami  = "ami-0123b531fc646552f"
   instance_type = "t2.micro"
   associate_public_ip_address = "true"
   count = "${var.instance_count}"
