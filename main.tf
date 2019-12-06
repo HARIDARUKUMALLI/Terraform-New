@@ -1,9 +1,9 @@
 provider "aws" {
-  region  = "us-east-1"
+  region  = "ap-south-1"
 }
 resource "aws_security_group" "my-sg" {
   name  = "Test-sg"
-  vpc_id  = "vpc-07a518366cfd9b216"
+  vpc_id  = "vpc-8b698fe2"
   ingress {
   from_port = 22
   to_port = 22
