@@ -3,7 +3,7 @@ provider "aws" {
 }
 resource "aws_security_group" "my-sg" {
   name  = "Test-sg"
-  vpc_id  = "vpc-8b698fe2"
+  vpc_id  = "vpc-07a518366cfd9b216"
   ingress {
   from_port = 22
   to_port = 22
