@@ -22,7 +22,7 @@ resource "aws_instance" "example" {
   instance_type = "t2.micro"
   associate_public_ip_address = "true"
   count = "${var.instance_count}"
-  key_name  = "MyTest"
+  key_name  = "devops"
   vpc_security_group_ids  = ["${aws_security_group.my-sg.id}"]
 
 tags  = {
