@@ -26,9 +26,9 @@ resource "aws_instance" "example" {
   vpc_security_group_ids  = ["${aws_security_group.my-sg.id}"]
 
 tags  = {
- Name  = "DEV"
-#  Name = "${format("example-%03d", count.index + 1)}"
- # Name  = "${element(var.instance_tags, count.index)}"
+ #Name  = "DEV"
+# Name = "${format("example-%03d", count.index + 1)}"
+ Name  = "${element(var.instance_tags, count.index)}"
 #  Name  = "{count.index}"
 }
 lifecycle {
@@ -45,9 +45,9 @@ resource "aws_instance" "test" {
   vpc_security_group_ids  = ["${aws_security_group.my-sg.id}"]
 
 tags  = {
- Name  = "PROD"
+ #Name  = "PROD"
 #  Name = "${format("example-%03d", count.index + 1)}"
- # Name  = "${element(var.instance_tags, count.index)}"
+ Name  = "${element(var.instance_tags, count.index)}"
 #  Name  = "{count.index}"
 }
 lifecycle {
