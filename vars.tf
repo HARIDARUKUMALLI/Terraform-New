@@ -1,7 +1,7 @@
 variable  "instance_count"  {
-  default = "1"
+  default = "2"
 }
-#variable "instance_tags"  {
- # type  = "list"
-  #default = [ "DEV", "PROD"]
-#}
+variable "instance_tags"  {
+  type  = "list"
+  default = [ "DEV", "PROD"]
+}
