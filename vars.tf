@@ -3,5 +3,5 @@ variable  "instance_count"  {
 }
 variable "instance_tags"  {
   type  = "list"
-  default = [ "Test1", "Test2"]
+  default = [ "DEV", "PROD"]
 }
