@@ -1,19 +1,19 @@
 provider "aws" {
   region  = "ap-south-1"
 }
-resource "aws_security_group" "my-sg" {
-  name  = "Test-sg"
-  vpc_id  = "vpc-8b698fe2"
-  ingress {
-  from_port = 22
-  to_port = 22
-  protocol  = "TCP"
-  cidr_blocks = ["0.0.0.0/0"]
-  }
-  tags = {
-    Name = "ssh-sg"
-  }
-}
+#resource "aws_security_group" "my-sg" {
+ # name  = "Test-sg"
+  #vpc_id  = "vpc-8b698fe2"
+  #ingress {
+  #from_port = 22
+  #to_port = 22
+  #protocol  = "TCP"
+  #cidr_blocks = ["0.0.0.0/0"]
+  #}
+  #tags = {
+   # Name = "ssh-sg"
+  #}
+#}
 
 
 
@@ -23,7 +23,7 @@ resource "aws_instance" "example" {
   associate_public_ip_address = "true"
   count = "${var.instance_count}"
   key_name  = "devops"
-  vpc_security_group_ids  = ["${aws_security_group.my-sg.id}"]
+  vpc_security_group_ids  = ["sg-0e4767feb6cb8923c"]
 
 tags  = {
  #Name  = "DEV"
