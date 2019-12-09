@@ -56,11 +56,11 @@ lifecycle {
 }
 
 resource "aws_eip_association" "eip" {
-  instance_id = "${aws_instance.example.id}"
+  instance_id = "${aws_instance.example[count.index]}"
   allocation_id = "eipalloc-00496129794133ccb"
 }
 
 resource "aws_eip_association" "eip2" {
-  instance_id = "${aws_instance.test.id}"
+  instance_id = "${aws_instance.test[count.index]}"
   allocation_id = "eipalloc-0c86323a2fde68dfb"
 }
