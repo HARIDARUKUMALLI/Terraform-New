@@ -21,7 +21,7 @@ resource "aws_instance" "example" {
   ami  = "ami-0123b531fc646552f"
   instance_type = "t2.medium"
 #  associate_public_ip_address = "true"
- # count = "${var.instance_count}"
+  count = "${var.instance_count}"
   key_name  = "devops"
   vpc_security_group_ids  = ["${aws_security_group.my-sg.id}"]
 
@@ -40,7 +40,7 @@ resource "aws_instance" "test" {
   ami  = "ami-0123b531fc646552f"
   instance_type = "t2.medium"
  # associate_public_ip_address = "true"
- # count = "${var.instance_count}"
+  count = "${var.instance_count}"
   key_name  = "devops"
   vpc_security_group_ids  = ["${aws_security_group.my-sg.id}"]
 
