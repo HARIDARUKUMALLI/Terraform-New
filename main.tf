@@ -1,7 +1,7 @@
 provider "aws" {
   region  = "ap-south-1"
 }
-resource "aws_security_group" "my-sg" {
+resource "aws_security_group" "cicd-sg" {
   name  = "Test-sg"
   vpc_id  = "vpc-8b698fe2"
   ingress {
@@ -34,7 +34,7 @@ resource "aws_instance" "example" {
   instance_type = "t2.medium"
   associate_public_ip_address = "true"
   count = "${var.instance_count}"
-  key_name  = "devops"
+  key_name  = "realtime"
   vpc_security_group_ids  = ["${aws_security_group.my-sg.id}"]
 
 tags  = {
