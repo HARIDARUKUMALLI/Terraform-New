@@ -2,7 +2,7 @@ provider "aws" {
   region  = "ap-south-1"
 }
 resource "aws_security_group" "cicd-sg" {
-  name  = "Test-sg"
+  name  = "CD-sg"
   vpc_id  = "vpc-8b698fe2"
   ingress {
   from_port = 22
