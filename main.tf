@@ -35,7 +35,7 @@ resource "aws_instance" "example" {
   associate_public_ip_address = "true"
   count = "${var.instance_count}"
   key_name  = "realtime"
-  vpc_security_group_ids  = ["${aws_security_group.my-sg.id}"]
+  vpc_security_group_ids  = ["${aws_security_group.cicd-sg.id}"]
 
 tags  = {
  #Name  = "DEV"
