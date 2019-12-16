@@ -1,8 +1,8 @@
 provider "aws" {
   region  = "ap-south-1"
 }
-resource "aws_security_group" "cicd-sg" {
-  name  = "CD-sg"
+resource "aws_security_group" "cicd-demo-sg" {
+  name  = "CD-demo-sg"
   vpc_id  = "vpc-8b698fe2"
   ingress {
   from_port = 22
@@ -35,7 +35,7 @@ resource "aws_instance" "example" {
   associate_public_ip_address = "true"
   count = "${var.instance_count}"
   key_name  = "realtime"
-  vpc_security_group_ids  = ["${aws_security_group.cicd-sg.id}"]
+  vpc_security_group_ids  = ["${aws_security_group.cicd-demo-sg.id}"]
 
 tags  = {
  #Name  = "DEV"
